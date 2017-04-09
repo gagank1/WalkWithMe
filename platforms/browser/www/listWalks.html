@@ -51,7 +51,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-
     <body class="blue darken-4" onload="startUp()">
         <div class="container">
             <div class="row">
@@ -65,7 +64,7 @@
                 
                 <script>
                     function createWalk() {
-                        <!-- INSERT CODE TO GO TO CREATE WALK PAGE -->
+                        window.location.href = "newWalk.html"<!-- INSERT CODE TO GO TO CREATE WALK PAGE -->
                     }
                 </script>
                 
@@ -73,17 +72,10 @@
                     <a class="btn-floating btn-large waves-effect waves-light blue" onclick="createWalk()"><i class="material-icons">add</i></a>
                 </div>
                 
+
             </div>
-            
+
             <div class="divider"></div>
-            
-            <script>
-                function sendData(){
-                    Materialize.toast("Walk joined!", 3000)
-                    $('#modal1').modal('open')
-                }
-            </script>
-            
 
             <!-- This is where all the cards that display existing walks are located -->
             <div class="section">
@@ -94,10 +86,54 @@
                         <div class="card blue lighten-3">
                             <div class="card-content grey-text text-lighten-5">
                                 <!-- Ending location, distance to starting location, time -->
-
-                                <span class="card-title">To 821 Bubb Road</span>
-                                <span id="asdf">.5 miles away</span>
-                                <span>at 5 pm</span>
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">0.58 miles away</span>
+                                <span>at 8:30</span>
+                            </div>
+                            
+                            
+                            <div class="card-action">
+                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()" href="#modal1">Join walk
+                                    <i class="material-icons right">library_add</i>
+                                </button>
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Modal Header</h4>
+                                        <p>A bunch of text</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6">
+                        <div class="card blue lighten-3">
+                            <div class="card-content grey-text text-lighten-5">
+                                <!-- Ending location, distance to starting location, time -->
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">0.58 miles away</span>
+                                <span>at 9:30</span>
+                            </div>
+                            
+                            
+                            <div class="card-action">
+                                <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="sendData()">Join walk
+                                    <i class="material-icons right">library_add</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6">
+                        <div class="card blue lighten-3">
+                            <div class="card-content grey-text text-lighten-5">
+                                <!-- Ending location, distance to starting location, time -->
+                                <span class="card-title">To 10155 Barbara Lane</span>
+                                <span id="asdf">1.44 miles away</span>
+                                <span>at 10:30</span>
                             </div>
 
 
@@ -119,8 +155,13 @@
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <!--<script type="text/javascript" src="cordova.js"></script>-->
 
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script>
+            function sendData() {
+                Materialize.toast("Walk joined!", 3000)
+            }
+        </script>
         <script type="text/javascript">
             function processList(listOfWalks) {
                 //Materialize.toast("inside processList()", 4000)
